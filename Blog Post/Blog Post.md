@@ -1,13 +1,12 @@
-
-<h1> A year of Covid </h1>
-
+<h1> A Year of Covid <\h1>
+ 
 With Lunar New Years celebrations out of the way we're about a year from the point where Covid-19 really started to come to the attention of the general public, at least here in the UK. With that in mind I would like to ask, and hopefully answer some questions about the pandemic.
 
- 1. Which Countries have suffered the worst Covid outbreaks?
+ 1. Which countries have suffered the worst Covid outbreaks?
  2. Is there a correlation between population density and severity of the outbreaks?
  3.  Is there a good linear model that predicts death rates from ICU patient and case numbers?
 
-With the first two questions we'll be exploring which countries have been most impacted and testing a hypothesis as to why. The final question will focus on finding a model for Covid deaths, this will serve both as a tool for prediction but also for understanding the relationship between case numbers and death counts.
+With the first two questions we'll be exploring which countries have been most impacted and testing a hypothesis as to why. The final question will focus on finding a model for Covid deaths, models like this can serve as tools for prediction but also for understanding the relationship between things like case numbers and death counts.
 
 <h2>Q1: Which countries have suffered the worst Covid outbreaks?</h2>
 A good place to start, when looking back on the last year, is to ask where has been most affected. In particular we'd like to find out which countries have the highest death/case counts proportionate to their population. Using data collected by [Our World in Data](https://ourworldindata.org/) it's easy enough to determine the answer.
@@ -93,17 +92,6 @@ A good place to start, when looking back on the last year, is to ask where has b
 
 
 The ten worst outbreaks, as measured by deaths, consist almost entirely of European Countries. The exception being of course the United States coming in at number 10. 
-
-
-```python
-cases_rank=df[['total_cases_per_million']].sort_values('total_cases_per_million', ascending=False).take(range(10)).reset_index()
-cases_rank.index+=1
-cases_rank.columns= ['Country', 'Cases per million']
-cases_rank
-```
-
-
-
 
 <div>
 <style scoped>
@@ -203,14 +191,14 @@ To test correlation we will, sticking with the theme of 2, consider both the Pea
 
 The second, Spearman Rank, is distribution agnostic and tests whether one variable goes up as the other does. Both are given as a score between 1 and -1, with these end scores representing a 'perfect'  positive and negetive correlation respectively. A score of 0 means there is no statistical relationship. 
     
-![png](output_14_1.png)
+![](/images/output_14_1.png)
     
 
 
 If we plot total cases per million vs population density then there does seem to be something of a correlation. The line of best clearly doesn't give a good description of the relationship, so the Pearson Coefficient will be low. However we would expect a Spearman Rank calculation to find a modest correlation.
 
     
-![png](output_16_1.png)
+![](/images/output_16_1.png)
     
 
 
@@ -273,7 +261,7 @@ Many commentators have given a variety of rules of thumb for estimate death rate
 
 There are of course complicating factors, most noticeably noise introduced to cases and deaths by periodic reporting cycles and that the new cases reported are not always a good estimate of the actual number of cases in the population. 
 
-![png](output_22_1.png)
+![](/images/output_22_1.png)
 
 If we look at the graphs of the data it does look like there is some kind of time lagged relationship between cases, ICU patients and deaths. The deaths and cases numbers are extremely noisy however, whereas the ICU patients curve is much  smoother. This is all pretty much what we'd expected.
 
@@ -284,13 +272,13 @@ ICU patients work much better for forecasting. Unsurprisingly however they don't
 The graphs below show a linear model trained on ICU patient numbers from 1-3 weeks before the prediction date. The first shows performance on the training data from 2020, the second on unseen data from January 2021. 
 
     
-![png](output_30_1.png)
+![](/images/output_30_1.png)
     
 
 
 
     
-![png](output_30_2.png)
+![](/images/output_30_2.png)
     
 
 
@@ -300,7 +288,7 @@ It turns out however that this model largely predicts from the most recent sets 
 
 The coefficients for the model are depicted in the graph below.  I honestly couldn't tell you why there's a large negative coefficient from patients numbers at -13 days, maybe you have some ideas?
     
-![png](output_32_0.png)
+![](/images/output_32_0.png)
  
 Perhaps somewhat unsurprisingly while the model does a good job predicting what is essentially the number of deaths over the next week, it does poorly at predicting more than about 10 days in advance.
  
@@ -309,21 +297,21 @@ Fortunately, we can construct a model that uses both these features to give pret
 I'll spare you a list of coefficients, but again you can find them in my Github repo if you're so inclined.
 
     
-![png](output_34_1.png)
+![](/images/output_34_1.png)
     
 
 
 
     
-![png](output_34_2.png)
+![](/images/output_34_2.png)
     
 
 
 If you're looking for something simpler in your life and want to predict the deaths a couple of weeks in advance, the following model does a surprisingly good job just using cases and ICU patients 2 weeks prior. Curiously this model outperforms the larger one on the test data, this is conceivably a consequence of overfitting in the earlier model but is most likely chance.
 
-![png](output_36_1.png)
+![](/images/output_36_1.png)
         
-![png](output_36_2.png)
+![](/images/output_36_2.png)
     
 
 This model takes just a days worth of data and uses the following coefficient.
