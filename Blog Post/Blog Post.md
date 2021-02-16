@@ -191,14 +191,14 @@ To test correlation we will, sticking with the theme of 2, consider both the Pea
 
 The second, Spearman Rank, is distribution agnostic and tests whether one variable goes up as the other does. Both are given as a score between 1 and -1, with these end scores representing a 'perfect'  positive and negetive correlation respectively. A score of 0 means there is no statistical relationship. 
     
-![](/images/output_14_1.png)
+![png](output_14_1.png)
     
 
 
 If we plot total cases per million vs population density then there does seem to be something of a correlation. The line of best clearly doesn't give a good description of the relationship, so the Pearson Coefficient will be low. However we would expect a Spearman Rank calculation to find a modest correlation.
 
     
-![](/images/output_16_1.png)
+![](output_16_1.png)
     
 
 
@@ -261,7 +261,7 @@ Many commentators have given a variety of rules of thumb for estimate death rate
 
 There are of course complicating factors, most noticeably noise introduced to cases and deaths by periodic reporting cycles and that the new cases reported are not always a good estimate of the actual number of cases in the population. 
 
-![](/images/output_22_1.png)
+![](output_22_1.png)
 
 If we look at the graphs of the data it does look like there is some kind of time lagged relationship between cases, ICU patients and deaths. The deaths and cases numbers are extremely noisy however, whereas the ICU patients curve is much  smoother. This is all pretty much what we'd expected.
 
@@ -272,13 +272,13 @@ ICU patients work much better for forecasting. Unsurprisingly however they don't
 The graphs below show a linear model trained on ICU patient numbers from 1-3 weeks before the prediction date. The first shows performance on the training data from 2020, the second on unseen data from January 2021. 
 
     
-![](/images/output_30_1.png)
+![](output_30_1.png)
     
 
 
 
     
-![](/images/output_30_2.png)
+![](output_30_2.png)
     
 
 
@@ -288,7 +288,7 @@ It turns out however that this model largely predicts from the most recent sets 
 
 The coefficients for the model are depicted in the graph below.  I honestly couldn't tell you why there's a large negative coefficient from patients numbers at -13 days, maybe you have some ideas?
     
-![](/images/output_32_0.png)
+![](output_32_0.png)
  
 Perhaps somewhat unsurprisingly while the model does a good job predicting what is essentially the number of deaths over the next week, it does poorly at predicting more than about 10 days in advance.
  
@@ -297,21 +297,21 @@ Fortunately, we can construct a model that uses both these features to give pret
 I'll spare you a list of coefficients, but again you can find them in my Github repo if you're so inclined.
 
     
-![](/images/output_34_1.png)
+![](output_34_1.png)
     
 
 
 
     
-![](/images/output_34_2.png)
+![](output_34_2.png)
     
 
 
 If you're looking for something simpler in your life and want to predict the deaths a couple of weeks in advance, the following model does a surprisingly good job just using cases and ICU patients 2 weeks prior. Curiously this model outperforms the larger one on the test data, this is conceivably a consequence of overfitting in the earlier model but is most likely chance.
 
-![](/images/output_36_1.png)
+![](output_36_1.png)
         
-![](/images/output_36_2.png)
+![](output_36_2.png)
     
 
 This model takes just a days worth of data and uses the following coefficient.
