@@ -1,6 +1,8 @@
 # Covid-Blog-Post
 Blog post for Udacity 'Write A Data Science Blog Post' assignment.
 
+You can read the actual blog post [here](https://stigant.github.io/Blog/2021/02/14/Covid.html).
+
 <h2> Motiviations </h2>
 
 We've lived with covid for about a year now. As disastrous as it has been, it has also demonstrated the power of data in responding to real world situations. Our ability to fight covid has depended as much on our ability to collect and understand relevant data, using it to inform our actions, as it has on our health systems. This seemed like a natural place then to start a data science journey. Plus it fits the relevancy criteria laid out for being a good blog post. The questions I posed were simply the ones I thought would be interesting and doable with the time and data available to me.
