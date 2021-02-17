@@ -9,7 +9,7 @@ We've lived with covid for about a year now. As disastrous as it has been, it ha
 
 <h2> Files </h2>
 
-The repo contains three csv files containing relevant data, sourced as described below.
+The repo contains two csv files containing relevant data, sourced as described below.
 
 The main body of work is a Jypiter notebook. This contains the code used to answer the three questions posed in the blog post. The methods used were essentially inbuilt, but there are functions written to simplify some tasks and allow for experimenation. Most notably is pipe, this takes
 
@@ -40,7 +40,6 @@ All the packages used come in a standard coda installation, besides adjustText. 
 <h2> Data Acknowledgments </h2>
 
 The covid data all comes from [Our World in Data](https://ourworldindata.org/coronavirus).
-The population density is courtesy of the [World Bank](https://data.worldbank.org/indicator/EN.POP.DNST).
 Data on population weighted density comes from the European Commision's [Joint Research Centre](https://data.jrc.ec.europa.eu/dataset/jrc-luisa-udp-pwd-ref2016).
 
 
