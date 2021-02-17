@@ -41,7 +41,7 @@ All the packages used come in a standard coda installation, besides adjustText. 
 
 The covid data all comes from [Our World in Data](https://ourworldindata.org/coronavirus).
 Data on population weighted density comes from the European Commision's [Joint Research Centre](https://data.jrc.ec.europa.eu/dataset/jrc-luisa-udp-pwd-ref2016).
-
+The title image was taken from [here](https://www.etsfirstaid.co.uk/latest-news/covid-19-first-aid-training-update/).
 
 
 
