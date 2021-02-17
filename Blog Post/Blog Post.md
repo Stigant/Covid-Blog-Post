@@ -1,5 +1,7 @@
 <h1> A Year of Covid </h1>
- 
+
+![](https://i1.wp.com/www.etsfirstaid.co.uk/wp-content/uploads/2020/05/dt_200221_covid_19_coronavirus_800x450.jpg?fit=800%2C450&ssl=1g)
+
 With Lunar New Years celebrations out of the way we're about a year from the point where Covid-19 really started to come to the attention of the general public, at least here in the UK. With that in mind I would like to ask, and hopefully answer some questions about the pandemic.
 
  1. Which countries have suffered the worst Covid outbreaks?
